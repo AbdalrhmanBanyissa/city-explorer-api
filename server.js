@@ -1,26 +1,36 @@
-const express = require("express"); // require the express package
-const app = express(); // initialize your express app instance
+'use strict';
+const express = require("express"); 
+const server = express(); 
 const weatherData = require("./data/weather.json");
 require("dotenv").config();
 const cors = require("cors");
 
+
 const PORT = process.env.PORT;
 
-app.use(cors()); // after you initialize your express app instance
-// a server endpoint
 
-app.get("/weather", (req, res) => {
-  let weatherArray = weatherData.data.map((item) => new Forcast(item));
-  res.send(weatherArray);
+
+server.use(cors());
+
+server.get("/", (req, res) => {
+  res.send('Hello from the other side');
 });
 
 class Forcast {
   constructor(item) {
-    this.date = item.valid_date;
-    this.weather = item.weather.description;
+    this.description = item.weather.description;
+    this.date = item.valid_date
+    
   }
 }
 
-app.listen(PORT, () => {
+server.get("/weather", (req, res) => {
+  let arr = weatherData.find((i)=>i.city_name.toLocaleLowerCase() === req.query.searchQuery.toLocaleLowerCase())
+  let weatherArray = arr.data.map((item) => new Forcast(item));
+  res.send(weatherArray);
+});
+
+
+server.listen(PORT, () => {
   console.log(`Server Started on ${PORT}`);
 });

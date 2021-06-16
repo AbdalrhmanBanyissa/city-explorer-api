@@ -17,12 +17,12 @@ A basic server to provide weather data information
 
 ## Time Estimates
 
-Name of feature: city-explorer-api
+Name of feature: lab 07
 
-Estimate of time needed to complete: 3 hours
+Estimate of time needed to complete: ---
 
-Start time: 2pm, 12am
+Start time: tuesday
 
-Finish time: 3pm, 1am
+Finish time: wednesday
 
-Actual time needed to complete:  2hours
+Actual time needed to complete:  1 day

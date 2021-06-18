@@ -29,7 +29,7 @@ function weahtrHandler(req, res) {
       res.send(weatherData);
     })
     .catch((error) => {
-      res.send("Error 404!" + error);
+      res.send("Error 404! " + error);
     });
 }
 
@@ -53,23 +53,23 @@ function movieHandler(req, res) {
   axios
     .get(movieUrl)
     .then((responce) => {
-      const moviearray = responce.data.results.map((item) => {
-        return new Movies(item);
-      });
-
+      const moviearray = responce.data.results.map(movieItem => new Movies (movieItem));
       res.send(moviearray);
     })
     .catch(error => {
-      res.send("Error 404!"+error)
+      res.send("Error 404! "+error)
     });
 }
 
 class Movies {
   constructor(item) {
-    this.original_title = item.original_title;
-    this.poster_path = item.poster_path;
-    this.release_date = item.release_date;
+    this.title = item.title;
+    this.overview = item.overview;
     this.vote_average = item.vote_average;
+    this.vote_count = item.vote_count;
+    this.poster_path = item.poster_path;
+    this.popularity = item.popularity;
+    this.release_date = item.release_date;
   }
 }
 

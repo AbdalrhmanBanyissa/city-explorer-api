@@ -17,12 +17,12 @@ A basic server to provide weather data information
 
 ## Time Estimates
 
-Name of feature: lab 07
+Name of feature: lab 10
 
-Estimate of time needed to complete: ---
+Estimate of time needed to complete:
 
-Start time: tuesday
+Start time:
 
-Finish time: wednesday
+Finish time:
 
-Actual time needed to complete:  1 day
+Actual time needed to complete:

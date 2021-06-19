@@ -6,7 +6,7 @@ let moviesCacheObj = {};
 
 const movieHandler = (req, res) => {
   const MOVIE_KEY = process.env.MOVIE_KEY;
-  const city = req.query.searchQuery;
+  const city = req.query.query;
 
   if (moviesCacheObj[city] !== undefined) {
     console.log("get the movies data from the cache object");
